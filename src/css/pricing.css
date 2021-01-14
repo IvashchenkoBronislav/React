@@ -1,0 +1,103 @@
+.pricing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.pricing__title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.pricing__text{
+    font-size:16px;
+    margin-top: 20px;
+    width: 60%;
+    color:#00000091;
+    line-height: 25px;
+    text-align: center;
+}
+
+
+.pricing__cost_cont{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom:120px;
+}
+
+.cost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    border: 1px solid #0000002c;
+    width: 30%;
+    border-radius: 20px;
+}
+
+
+.cost__cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-bottom:1px solid #0000002c;
+    background-color: #f8f9fa;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding:40px 0 ;
+}
+
+.cost__cont__name{
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+}
+
+.cost__cont__money{
+    font-size: 60px;
+    font-weight: 7  00;
+    color: #333333;
+}
+
+.cost__cont__month{
+    color: #757575;
+}
+
+.cost__info{
+    display: flex;
+    flex-direction: column;
+}
+
+.cost__info>span{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cost__info>span:last-child{
+    margin-bottom: 40px;
+}
+
+.cost__button{
+    width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    border:2px solid #04b667;
+    border-radius: 30px;
+    color: #04b667;
+    margin-bottom: 30px;
+}
+
+@media(max-width:992px){
+    .pricing__cost_cont{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cost{
+        width: 80%;
+    }
+}

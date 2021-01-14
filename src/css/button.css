@@ -1,0 +1,260 @@
+@font-face{
+    font-family: Kanit-Light;
+    src: url(./ttf/Kanit-Light.ttf);
+
+}
+
+
+.buttonNav{
+    color:#ffffff9d;
+    margin:9px 0px;
+    user-select: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    word-wrap: normal;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    position: relative;
+    z-index: 0;
+}
+
+.buttonNav:hover{
+    color:#ffffff;
+}
+
+
+.button_app:hover{
+    background-color: transparent;
+    color: white;
+}
+
+
+
+.fa-android{
+
+    contain: "\f17b";
+}
+
+.appButton__conteiner{
+    margin-top: 20px;
+}
+
+.appButton__conteiner>button:first-child{
+    margin-right: 20px;
+}
+
+.button_app{
+    padding: 20px 40px;    
+    border: 2px solid #ffffff;
+    background: #ffffff;
+    color:black;
+    border-radius: 50px;
+    outline: none;
+    font-weight: 800;
+}
+
+.box{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-right: 40px;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: none;
+        
+}
+
+.top{
+    display: block;
+    position: absolute;
+    font-weight: 900;
+    border-top: 4px solid red;
+    width: 30px;
+    border-radius: 20px;
+    animation-name:cross_red_top1 ;
+    animation-duration: 0.5s;
+}
+.mid{
+    display: block;
+    position: absolute;
+    top:10px;
+    border-top: 4px solid red;
+    width: 30px;
+    border-radius: 20px;
+    animation-name:cross_red_mid1 ;
+    animation-duration: 0.5s;
+}
+.bot{
+    display: block;
+    position: absolute;
+    top: 20px;
+    font-weight: 900;
+    border-top: 4px solid red;
+    width: 30px;
+    border-radius: 20px;
+    animation-name: cross_red_bot1;
+    animation-duration: 0.5s;
+}
+.box_button{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-right: 40px;
+    cursor: pointer;
+    user-select: none;
+    
+    
+}
+
+.box_button_x{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-right: 40px;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+
+
+.top_1{
+    display: block;
+    position: absolute;
+    font-weight: 900;
+    border-top: 4px solid red;
+    width: 30px;
+    top:10px;
+    border-radius: 20px;
+    transform: rotate(45deg);
+    animation-name: cross_red_top;
+    animation-duration:0.5s;
+} 
+
+.mid_1{
+    display: block;
+    position: absolute;
+    top:10px;
+    border-top: 4px solid red;
+    border-color: transparent;
+    width: 30px;
+    border-radius: 20px;
+    animation-name:cross_red_mid;
+    animation-duration: 0.5s;
+}
+
+.bot_1{
+    display: block;
+    position: absolute;
+    font-weight: 900;
+    border-top: 4px solid red;
+    width: 30px;
+    top:10px;
+    border-radius: 20px;
+    transform: rotate(-45deg);
+    animation-name: cross_red_bot;
+    animation-duration: 0.5s;
+}
+
+
+    
+@media(max-width:920px){
+    .appButton__conteiner {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media(max-width:580px){
+    .appButton__conteiner{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .appButton__conteiner>button:first-child{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@keyframes cross_red_top {
+    0%{
+        transform: rotate(0);
+        top: 0px;
+    }
+
+    100%{
+        transform: rotate(45deg);
+        top: 10px;
+    }
+}
+
+@keyframes cross_red_mid {
+    0%{
+        border-color: red;
+    }
+
+    100%{
+        border-color: transparent;
+    }
+}
+
+
+@keyframes cross_red_bot {
+    0%{
+        transform: rotate(0);
+        top: 20px;
+    }
+
+    100%{
+        transform: rotate(-45deg);
+        top:10px
+    }
+}
+
+@keyframes cross_red_top1 {
+    0%{
+        transform: rotate(45deg)    ;
+        top: 10px;
+    }
+
+    100%{
+        transform: rotate(0deg);
+        top: 0px;
+    }
+}
+
+@keyframes cross_red_mid1 {
+    0%{
+        border-color: transparent;
+    }
+
+    100%{
+        border-color: red;
+    }
+}
+
+
+@keyframes cross_red_bot1 {
+    0%{
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+
+    100%{
+        transform: rotate(0deg);
+        top:20px
+    }
+}
+
+@media (max-width:400px){
+    
+    .box{
+        margin-right:10px;
+    }
+}

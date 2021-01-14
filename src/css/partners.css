@@ -1,0 +1,36 @@
+.cont_part{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    animation-name: img_transperansi;
+    animation-duration: 2s;
+    
+}
+
+.cont_part__tex{
+    font-size: 24px;
+    font-weight: 700; 
+}
+
+.cont_part__img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.part_img{
+    width: 200px;
+    margin:20px 0;
+}
+
+
+@keyframes img_transperansi{
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}

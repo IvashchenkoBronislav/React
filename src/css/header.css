@@ -1,0 +1,284 @@
+.header{
+    background-image: url(./background/slide-1.jpg);
+    background-size: cover;
+    background-repeat: repeat-x;
+    padding-bottom: 160px;
+    overflow-x: hidden;
+}
+
+
+.header__box_nav{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.header__button{
+    display: flex;
+    position: absolute;
+    margin:  0 6%;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.header__button1{
+    display: flex;
+    position: fixed;
+    top:-140px;
+    margin:  0 6%;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 20px;
+    background-color: black;
+    transition: all 1s ease-out;
+    z-index: 10;
+}
+
+@keyframes header_slide{
+    0%{
+        top:-140px
+    }
+    100%{
+        top:0px;
+    }
+}
+
+
+
+.header__logo{
+    position: relative;
+    left: -40px;
+    margin-top: 5px;
+    height: 22px;
+    width: 99.3px;
+}
+.header__nav{
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.header__mini_nav{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top:-400px;     
+    background-color: black;
+    flex-direction: column;
+    z-index: 99;
+}
+
+.header__nav__black{
+    display: flex;
+    position: relative;
+    height: 0px;
+    top:-350px;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left:50px;
+    transition:all 0.2s ease-out;
+}
+
+
+
+.header__mini_logo{
+    margin-left: 60px;
+    height: 22px;
+    width: 99.3px;
+    margin-top: 5px;
+}
+
+.header__button_mini_cont{
+    margin:10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fas{
+    color:red;
+    font-size: 30px;
+    margin-right: 40px;
+}
+
+.header__title{
+    display: flex;
+    justify-content: center;
+    margin-top: 138px;
+}
+.header__title>img{
+    animation-name: img_appearance;
+    animation-duration: 2s;
+}
+
+@keyframes img_appearance{
+    0%{
+        margin-left: 400px;
+    }
+
+    100%{
+        margin-left: 0px;
+    }
+}
+
+.title__text{
+    display: flex;
+    margin-top: 150px;
+    flex-direction: column;
+    color: #fff;
+}
+
+.text__head{
+    width: 650px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    font-size:60px;
+}
+
+
+.text__body{
+    width: 600px;
+    margin-top: 20px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+
+@media(max-width:1350px){
+    .text__head{
+        width: 500px;
+        font-size: 46px;
+    }
+
+    .text__body{
+        width: 500px;
+        font-size: 16px;
+    }
+
+    .header__title>img{
+        width: 600px;
+    }
+    
+}
+
+
+@media(max-width:1150px){
+    .header__title>img{
+        width: 400px;
+    }
+
+    .title__text{
+        margin-top: 68px;
+    }
+}
+
+@media(max-width:970px){
+
+    .header{
+        overflow-x: hidden;
+    }
+    .header__logo{
+        position: relative;
+        left: 0px;
+    }
+}
+
+
+@media(max-width:920px){
+    .header{
+        padding-top:50px;
+    }
+
+    .header__box_nav{
+        display: none;
+    }
+
+    .header__mini_nav{
+        top: 0;
+        animation-name:black_nav_appearance ;
+        animation-duration: 1s;
+    }
+
+    @keyframes black_nav_appearance{
+        0%{
+            top:-675px;
+        }
+    
+        100%{
+            top:0px;
+        }
+    }
+
+    
+
+    .header__title{
+        padding-bottom: 20px;
+        margin: 0;
+       
+    }
+
+    .header__title>img{
+        display: none;
+      
+    }
+
+    .title__text{
+        width: 90%;
+        margin-top: 30px;
+        
+    }
+
+    .text__head{
+        width: 100%;
+        font-size: 34px;
+        text-align:center;
+    }
+    
+    
+    .text__body{
+        width: 100%;
+        text-align:center;
+    }
+}
+
+
+
+@media (max-width:400px){
+    .header__mini_logo{
+        margin-left: 20px;
+    }
+    
+}
+
+@media(max-width:225px){
+    .app{
+        width: 225px;
+    }
+}
+
+@keyframes miniNavBar {
+    0%{
+        top:-300px;
+        height: 0;
+    }
+
+    100%{
+        top:0px;
+        height: 300px;
+    }
+}
+
+@keyframes miniNavBar_revers {
+    0%{
+        top:0px;
+        height: 300px;
+        
+    }
+
+    100%{
+        top:-300px;
+        height: 0;
+    }
+}

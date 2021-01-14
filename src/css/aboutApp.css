@@ -1,0 +1,60 @@
+.aboutApp{
+    display: flex;
+    justify-content: space-around;
+    margin: 100px 10%;
+    flex-wrap: wrap;
+}
+
+.aboutApp__img{
+    width: 500px;
+}
+
+.aboutApp__info{
+    width: 40%;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.aboutApp__info__title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.aboutApp__info__text{
+    font-size:16px;
+    margin-top: 20px;
+    color:#00000091;
+}
+
+@media(max-width:1266px){
+    .aboutApp__info{
+        width: 100%;
+    }
+
+    .aboutApp__info__text{
+        text-align: center;
+    }
+    .aboutApp__info__title{
+        text-align: center;
+    }
+}
+
+@media(max-width:1016px){
+    .aboutApp__img{
+        width: 50%;
+    }
+
+    .aboutApp__info{
+        width: 80%;
+        margin-left: 0;
+    }
+
+    
+}
+
+@media(max-width:600px){
+    .aboutApp__img{
+        width: 100%;
+    }
+}

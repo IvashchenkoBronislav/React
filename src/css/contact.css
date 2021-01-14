@@ -1,0 +1,200 @@
+.GIT{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:100px 0;
+    background-color: #fafcff;
+    width: 100%;
+}
+
+.GIT__titul{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.GIT__text{
+    text-align: center;
+    font-size:16px;
+    margin-top: 20px;
+    width: 60%;
+    color:#00000091;
+    line-height: 25px;
+    text-align: center;
+}
+
+.GIT__massage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.GIT__massage__input{
+    width: 600px;
+    height: 50px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    border:1px solid #eaeaea;
+}
+
+.GIT__massage__text_area{
+    width: 584px;
+    outline: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    border:1px solid #eaeaea;
+    resize: none;
+}
+
+.GIT__massage__button{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: #04b667;
+    outline: none;
+    border:1px solid #04b667;
+    border-radius: 5px;
+    color:#ffffff;
+    font-weight: 800;
+}
+
+.contact_green{
+    display: flex;
+    justify-content: space-around;
+    background-color: #04b667;
+    height: 150px;
+    align-items: center;
+}
+
+.contact_green__text{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.contact_green__button{
+    width: 200px;
+    height: 60px;
+    background-color: #ffffff;
+    border:1px solid #ffffff;
+    border-radius: 30px;
+    font-weight: 700;
+}
+
+.contact_black{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 16px;
+    background-color: black;
+}
+
+.contact_black__logo{
+    width: 199px;
+    height: 46px;
+    margin-bottom:50px;
+}
+
+.contact_black__cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0px 30px;
+}
+
+.lnr{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:#ffffff;
+    font-size: 30px;
+}
+
+.contact_black__cont__eliment{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    color: #ffffff80;
+    margin:20px;
+}
+
+.contact_black__cont__eliment__text{
+    text-align: center;
+    color: #ffffff;
+    margin: 15px;
+}
+
+.contact_black__cont__eliment__info{
+    text-align: center;
+}
+
+.icon{
+    margin:10px;
+    color: #ffffff;
+}
+
+.contact_black__footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #ffffff2d;
+    padding-top: 10px;
+    
+}
+
+.contact_black__footer__text{
+    color:#ffffff80;
+    width: 350px;
+    text-align: right   ;
+}
+
+.contact_black__footer__icon{
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+}
+
+@media(max-width:992px){
+    .contact_black__cont{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact_black__cont__eliment{
+        width: 300px;    
+    }
+
+    .contact_black__footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact_black__footer__text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact_black__footer__icon{
+        justify-content: center;
+    }
+
+    .contact_green{
+        flex-direction: column;
+    }
+
+    .contact_green__text{
+        text-align: center;
+    }
+
+    .GIT__massage>input{
+        width: auto;
+    }
+
+    .GIT__massage__text_area{
+        width: auto;
+    }
+
+    
+}
