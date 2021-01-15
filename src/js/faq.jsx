@@ -35,12 +35,15 @@ class Faq extends React.Component{
     }
 
     toggle=()=>{
-        
-        
+        this.setState(this.togg.t1, ()=>{
+            this.togg.t1 = !this.togg.t1
+        })
+        console.log(1)
+        console.log(this.togg.t1)
     }
 
     render(){
-        const {isShow} = this.state;
+       
         return(
             <div className="faq">
                 <div className="faq__titul">
@@ -50,68 +53,11 @@ class Faq extends React.Component{
                     {this.state.question.map((part)=>{
                         return(
                             <div className="faq__case" key={part.id}>
-                                <label ><div className="faq__case__title"><span className={`faq__case__title ${isShow ? 'open' : 'close'}`} id={"check"+ part.id}>+</span><input type="checkbox" onClick={
-                                    ()=>
-                                
-                                {
-                                    let faqCase = document.getElementById(part.id);
-                                    let idt = "t" + part.id;
-                                    let check = document.getElementById("check"+part.id)
-                                    
-                                    console.log(this.state.isShow)
-                                    
-                                        if (this.togg[idt] === true){
-                                            console.log(this.togg.t1, this.togg.t2 , this.togg.t3, 1)
-                                            setInterval(()=>{
-                                                
-                                                if(this.togg.t1 === false){
-                                                    document.getElementById("1").style.height = "210px"
-                                                    document.getElementById("2").style.height = "0px"
-                                                    document.getElementById("3").style.height = "0px"
-                                                    document.getElementById("check1").innerHTML="-"
-                                                    document.getElementById("check2").innerHTML="+"
-                                                    document.getElementById("check3").innerHTML="+"
-                                                }else if(this.togg.t2 === false){
-                                                    document.getElementById("1").style.height = "0px"
-                                                    document.getElementById("2").style.height = "210px"
-                                                    document.getElementById("3").style.height = "0px"
-                                                    document.getElementById("check1").innerHTML="+"
-                                                    document.getElementById("check2").innerHTML="-"
-                                                    document.getElementById("check3").innerHTML="+"
-                                                }else if(this.togg.t3 === false){
-                                                    document.getElementById("1").style.height = "0px"
-                                                    document.getElementById("2").style.height = "0px"
-                                                    document.getElementById("3").style.height = "210px"
-                                                    document.getElementById("check1").innerHTML="+"
-                                                    document.getElementById("check2").innerHTML="+"
-                                                    document.getElementById("check3").innerHTML="-"
-                                                }else{
-                                                    document.getElementById("check1").innerHTML="+"
-                                                    document.getElementById("check2").innerHTML="+"
-                                                    document.getElementById("check3").innerHTML="+"                                     
-                                                }
-                                            })                
-
-                                            return (
-                                                this.togg.t1 = true,
-                                                this.togg.t2 = true,
-                                                this.togg.t3 = true,
-                                                this.togg[idt] =false
-                                                )
-
-                                            }else if(this.togg[idt] === false){
-
-                                            faqCase.style.height = "0px"
-
-                                            return this.togg[idt] = true;
-                                        }
-
-                                        
-
-                                    
-                                    console.log(this.togg[idt] , idt)
-                                }
-                                }></input>{part.name}</div>
+                                <label className="faq__case__title">
+                                    <span className={`faq__case__title ${this.togg[0] ? 'open' : 'close'}`} id={"check"+ part.id}>+</span>
+                                    <input type="checkbox" onClick={this.toggle}></input>
+                                    <span>{part.name}</span>
+                                </label>
                                 <div className={`faq__case__text ${this.state.isShow ? 'open' : 'op'}`} id={part.id} style={{height:0+"px"}}>
                                     <span>{part.text1}</span>
                                     <span>{part.text2}</span>
@@ -125,7 +71,6 @@ class Faq extends React.Component{
                                         </ul>
                                     </div>
                                 </div>
-                                </label>
                             </div>
                         )
                     })}
