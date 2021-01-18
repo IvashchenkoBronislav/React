@@ -35,9 +35,8 @@ class Faq extends React.Component{
     }
 
     toggle=()=>{
-        this.setState(this.togg.t1, ()=>{
-            this.togg.t1 = !this.togg.t1
-        })
+        this.setState(()=>{
+           return  this.togg.t1 = !this.togg.t1})
         console.log(1)
         console.log(this.togg.t1)
     }
@@ -54,11 +53,11 @@ class Faq extends React.Component{
                         return(
                             <div className="faq__case" key={part.id}>
                                 <label className="faq__case__title">
-                                    <span className={`faq__case__title ${this.togg[0] ? 'open' : 'close'}`} id={"check"+ part.id}>+</span>
+                                    <span className={`faq__case__title `} id={"check"+ part.id}>+</span>
                                     <input type="checkbox" onClick={this.toggle}></input>
                                     <span>{part.name}</span>
                                 </label>
-                                <div className={`faq__case__text ${this.state.isShow ? 'open' : 'op'}`} id={part.id} style={{height:0+"px"}}>
+                                <div className={`faq__case__text ${this.togg[`t`+part.id] ? 'open' : 'close'}`} id={part.id}>
                                     <span>{part.text1}</span>
                                     <span>{part.text2}</span>
                                     <div>

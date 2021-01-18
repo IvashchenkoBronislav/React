@@ -45,14 +45,35 @@
     color:#00000091;
     line-height: 25px;
     overflow: hidden;
-    transition: all 0.5s ease-out;
+    
 }
-
 .open{
     height: auto;
-    background-color: aqua;
+    
+    
 }
 
 .close{
     height: 0;
+    
+}
+
+@keyframes Open{
+    0%{
+
+    }
+
+    100%{
+
+    }
+}
+
+@keyframes Clase{
+    0%{
+
+    }
+
+    100%{
+
+    }
 }
