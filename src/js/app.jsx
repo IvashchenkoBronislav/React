@@ -15,14 +15,14 @@ class OnLoad extends React.Component{
         return(
             <div className="app">
                 <Header/>
-                {/* <PartnersCont/>
+                <PartnersCont/>
                 <AboutApp/>
                 <HowToUse/>
                 <Faq/>
                 <ScreenShots/>
                 <DownloadApp/>
                 <Pricing/>
-                <Contact/> */}
+                <Contact/>
                 <div></div>
             </div>
         )

@@ -11,6 +11,7 @@
 .faq__titul{
     font-size: 30px;
     font-weight: 700;
+    text-align: center;
 
 }
 
@@ -48,9 +49,7 @@
     
 }
 .open{
-    height: auto;
-    animation-name: Open;
-    animation-delay: 0.5;
+    height: auto;    
 }
 
 .close{
@@ -59,22 +58,3 @@
 }
 
 
-@keyframes Open{
-    0%{
-        height: 0;
-    }
-
-    100%{
-        height: 400px;
-    }
-}
-
-@keyframes Clase{
-    0%{
-
-    }
-
-    100%{
-
-    }
-}

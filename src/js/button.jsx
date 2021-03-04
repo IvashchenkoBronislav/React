@@ -16,42 +16,37 @@
 
     class ButtonNav extends React.Component{
 
+        go(i){
+            let moveTo = document.querySelector(i)
+            moveTo.scrollIntoView({block:"start",behavior: "smooth"})
+        }
+
+        nav(){
+            if(this.props.children === "HOME"){
+                this.go(".header")
+            }else if(this.props.children === "ABOUT"){
+                this.go(".aboutApp")
+            }else if(this.props.children === "HOW TO USE"){
+                this.go(".htu")
+            }else if(this.props.children === "FAQ`S"){
+                this.go(".faq")
+            }else if(this.props.children === "SCREENSHORTS"){
+                this.go(".screenshorts")
+            }else if(this.props.children === "DOWNLOAD"){
+                this.go(".downApp")                        
+            }else if(this.props.children === "PRICING"){
+                this.go(".pricing")                        
+            }else if(this.props.children === "CONTACT"){
+                this.go(".contact")                        
+            }
+        }
+
         render(){
-            return (<button className="buttonNav" key={Math.render} onClick={()=>{
-                
-                let go = (i)=>{
-                    let moveTo = document.querySelector(i)
-                    moveTo.ScrollIntoView()
+            return (
+                <button className="buttonNav" key={Math.render} onClick={()=>{
+                    this.nav()
                 }
-
-                if(this.props.children === "HOME"){
-                    // go(".header")
-                    document.getElementById('header').ScrollIntoView(true)
-                    console.log(go(".header"))
-                }else if(this.props.children === "ABOUT"){
-
-                    console.log(go(".aboutApp"))
-                }else if(this.props.children === "HOW TO USE"){
-                    
-                    console.log(go(".htu"))
-                }else if(this.props.children === "FAQ`S"){
-                    
-                    console.log(go(".faq"))
-                }else if(this.props.children === "SCREENSHORTS"){
-                    
-                    console.log(go(".screenshorts"))
-                }else if(this.props.children === "DOWNLOAD"){
-                    
-                    console.log(go(".downApp"))
-                }else if(this.props.children === "PRICING"){
-                    
-                    console.log(go(".pricing"))
-                }else if(this.props.children === "CONTACT"){
-                    
-                    console.log(go(".contact"))
-                }
-                
-            }}>{this.props.children}</button>
+            }>{this.props.children}</button>
             )
         }   
     };
