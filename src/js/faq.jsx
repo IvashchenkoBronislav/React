@@ -83,7 +83,7 @@ class Faq extends React.Component{
                     return(
                         <div className="faq__case" key={part.id}>
                             <label className="faq__case__title">
-                                <span className="faq__case__title" id={"check"+ part.id}>{part.togg ? `-`:`+`}</span>
+                                <span className="faq__case__title" id={"check"+ part.id}>{part.togg ? `- `:`+`}</span>
                                 <input type="checkbox" onClick={this.toggle} id={part.id}></input>
                                 <span>{part.name}</span>
                             </label>
