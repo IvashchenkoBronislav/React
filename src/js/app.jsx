@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from "./header.jsx";
+import {Header} from "./header.jsx";
 import {PartnersCont} from "./partners.jsx"
 import AboutApp from "./aboutApp.jsx"
 import {HowToUse} from "./howToUSe.jsx"
@@ -19,7 +19,7 @@ class OnLoad extends React.Component{
                 <AboutApp/>
                 <HowToUse/>
                 <Faq/>
-                {/* <ScreenShots/> */}
+                <ScreenShots/>
                 <DownloadApp/>
                 <Pricing/>
                 <Contact/>

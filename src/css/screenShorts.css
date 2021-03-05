@@ -54,8 +54,7 @@
     width: 2600px;
     position: relative;
     height: 100%;
-    transition: 0.5s;
-    
+    transition: 0.5s;    
 }
 
 .screenshorts__button_cont{
@@ -80,6 +79,14 @@
 
 .active{
     background-color: #833ab4;
+}
+
+.on{
+    display: blcok;
+}
+
+.off{
+    display: none;
 }
 
 @media(max-width:1330px){

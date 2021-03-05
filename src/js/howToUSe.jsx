@@ -180,8 +180,7 @@ class HowToUse extends React.Component{
                             <div className="htu__text">{eliment.text}</div>
                         </div>
                     )
-                })}
-                </div>
+                })}</div>
                 <HTU_Info/>
                 <HTU_TF/>
                 <HTU_BigInfo/>
