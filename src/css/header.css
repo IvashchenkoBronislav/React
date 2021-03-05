@@ -243,6 +243,15 @@
     }
 }
 
+@media (max-width:375px){
+    .header__button_mini_cont{
+        width: 375px;
+    }
+    body{
+        width: 375px;
+    }
+}
+
 
 
 @media (max-width:400px){
