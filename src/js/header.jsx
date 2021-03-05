@@ -1,7 +1,6 @@
 import React from 'react';
 import "../css/header.css";
 import {ButtonNav, AppButton, ButtonToggle} from "./button.jsx";
-// import AppButton from "./button";
 import logo from "../img/logo-1.png"
 import TitleIMG from "../img/watch-phone.png"
 import "../css/button.css"
@@ -121,4 +120,4 @@ window.onload = checkScroll()
 
 
 
-export default Header
+export {Header}

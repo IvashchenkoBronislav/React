@@ -11,6 +11,7 @@
 .faq__titul{
     font-size: 30px;
     font-weight: 700;
+    text-align: center;
 
 }
 
@@ -45,13 +46,15 @@
     color:#00000091;
     line-height: 25px;
     overflow: hidden;
-    transition: all 0.5s ease-out;
+    
 }
-
 .open{
-    height: auto;
+    height: auto;    
 }
 
 .close{
     height: 0;
+    transition: all 1s ease-out;
 }
+
+

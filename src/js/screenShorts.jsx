@@ -16,6 +16,7 @@ class ScreenShots extends React.Component {
     constructor(props){
         super(props);
         this.state={
+            width:window.innerWidth,
             titul:"APP SCREENSHOTS",
             text:"Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc mi a libero."
         }
@@ -33,127 +34,364 @@ class ScreenShots extends React.Component {
             ]
         }
 
-        this.toggle = {
-            width:0,
+        this.bottum = {
+                b_3:false,
+                b_4:false,
+                b_8:false
         }
-
-        this.bAct = {
-
+        this.classb = {
+            act:"scroll_button",
         }
+    }
 
+    size(){
+        if(this.state.width <=1330 && this.state.width >=1001 ){
+
+            this.setState(()=>{
+                return (
+                    this.bottum.b_3=true,
+                    this.bottum.b_4=false,
+                    this.bottum.b_8=false
+                )
+            })
+
+            
+            
+        }else if(this.state.width <=1000 && this.state.width >=634){
+            this.setState(()=>{
+                return (
+                    this.bottum.b_3=true,
+                    this.bottum.b_4=true,
+                    this.bottum.b_8=false
+                )
+            })
+            
         
+        }else if(this.state.width <=633){
+            this.setState(()=>{
+                return (
+                    this.bottum.b_3=true,
+                    this.bottum.b_4=true,
+                    this.bottum.b_8=true
+                )
+            })
+            
+
+        }else{
+            
+            this.setState(()=>{
+                return this.bottum.b_3=false
+            })
+            
+        }
     }
 
     width(){
+        
+
         window.onload= ()=>{
-            setInterval (()=>{
-            
-                
-            
-                if(window.innerWidth <=1330 && window.innerWidth >=1001 ){
+            this.size()
 
-                    document.getElementById("b2").style.display = "block"
-                    document.getElementById("b3").style.display = "none"
-                    document.getElementById("b4").style.display = "none"
-                    document.getElementById("b5").style.display = "none"
-                    document.getElementById("b6").style.display = "none"
-                    document.getElementById("b7").style.display = "none"
-                    
-
-                    return this.toggle.width = 1
-
-                }else if(window.innerWidth <=1000 && window.innerWidth >=634){
-
-                    document.getElementById("b3").style.display = "block"
-                    document.getElementById("b2").style.display = "block"
-                    document.getElementById("b4").style.display = "none"
-                    document.getElementById("b5").style.display = "none"
-                    document.getElementById("b6").style.display = "none"
-                    document.getElementById("b7").style.display = "none"
-                    
-
-                    return this.toggle.width = 2
-                
-                }else if(window.innerWidth <=633){
-                    document.getElementById("b3").style.display = "block"
-                    document.getElementById("b2").style.display = "block"
-                    document.getElementById("b4").style.display = "block"
-                    document.getElementById("b5").style.display = "block"
-                    document.getElementById("b6").style.display = "block"
-                    document.getElementById("b7").style.display = "block"
-                    
-
-                    return this.toggle.width = 3
-
-                }else{
-                    document.getElementById("b2").style.display = "none"
-                    document.getElementById("b3").style.display = "none"
-                    document.getElementById("b4").style.display = "none"
-                    document.getElementById("b5").style.display = "none"
-                    document.getElementById("b6").style.display = "none"
-                    document.getElementById("b7").style.display = "none"
-                    
-                    return this.toggle.width = 0
-
-                }
-            })        
-        }
+            window.addEventListener("resize",()=>{
+                this.setState((state)=>{
+                    return state.width = window.innerWidth
+                })
+                        
+                this.size()
+            }
+        )}
     }
 
+    scrollTo(id,position){
+        
+        document.getElementById(id).scrollIntoView({block:"nearest",behavior: "smooth"})
+    }
+
+    act(id){
+        document.getElementById(id).classList.add("active")
+    }
+
+    off(id){
+        document.getElementById(id).classList.remove("active")
+    }
 
     active(num){
+
+
         let idb = num;
-        let carousel = document.querySelector(".carousel__cont");
+        let eliment = (id)=>{
+            return document.getElementById(id).classList.contains("active")
+        }
 
-
-        if(this.toggle.width === 0){
-
-            if (idb === 1){
-                carousel.style.transform = "translate(-1300px, 0)";
-            }else if (idb === 0) {
-                carousel.style.transform = "translate(0px, 0px)"
+        if(this.bottum.b_3 === false && this.bottum.b_4 === false && this.bottum.b_8 === false){
+            if (idb === 0){
+                if(eliment("b0")===false){
+                    this.act("b0")
+                    this.scrollTo("scrn1")
+                    if(eliment("b1")===true){
+                        this.off("b1")
+                    }
+                }         
+            }else if (idb === 1) {
+                if(eliment("b1")===false){
+                    this.act("b1")
+                    this.scrollTo("scrn8","start")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }
+                }       
             }
 
-        }else if(this.toggle.width === 1){
+
+        }else if(this.bottum.b_3 === true && this.bottum.b_4 === false && this.bottum.b_8 === false){
 
             if (idb === 0){
-                carousel.style.transform = "translate(0px, 0px)"
+                if(eliment("b0")===false){
+                    this.act("b0")
+                    this.scrollTo("scrn1")
+                    if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }
+                }         
             }else if (idb === 1) {
-                carousel.style.transform = "translate(-970px, 0px)"
+                if(eliment("b1")===false){
+                    this.act("b1")
+                    this.scrollTo("scrn5")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }
+                }       
             }else if (idb === 2) {
-                carousel.style.transform = "translate(-1650px, 0px)"
+                if(eliment("b2")===false){
+                    this.act("b2")
+                    this.scrollTo("scrn8")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }
+                }       
+            }
+            
+
+        }else if (this.bottum.b_3 === true && this.bottum.b_4 === true && this.bottum.b_8 === false){
+
+            if (idb === 0){
+                if(eliment("b0")===false){
+                    this.act("b0")
+                    this.scrollTo("scrn1")
+                    if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    } 
+                }         
+            }else if (idb === 1) {
+                if(eliment("b1")===false){
+                    this.act("b1")
+                    this.scrollTo("scrn4")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    } 
+                }       
+            }else if (idb === 2) {
+                if(eliment("b2")===false){
+                    this.act("b2")
+                    this.scrollTo("scrn6")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    } 
+                }       
+            }else if (idb === 3) {
+                if(eliment("b3")===false){
+                    this.act("b3")
+                    this.scrollTo("scrn8")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }
+                }  
             }
 
-        }else if (this.toggle.width === 2){
+        }else if (this.bottum.b_3 === true && this.bottum.b_4 === true && this.bottum.b_8 === true){
 
             if (idb === 0){
-                carousel.style.transform = "translate(0px, 0px)"
+                if(eliment("b0")===false){
+                    this.act("b0")
+                    this.scrollTo("scrn1")
+                    if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }         
             }else if (idb === 1) {
-                carousel.style.transform = "translate(-650px, 0px)"
+                if(eliment("b1")===false){
+                    this.act("b1")
+                    this.scrollTo("scrn2")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }       
             }else if (idb === 2) {
-                carousel.style.transform = "translate(-1300px, 0px)"
+                if(eliment("b2")===false){
+                    this.act("b2")
+                    this.scrollTo("scrn3")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }       
             }else if (idb === 3) {
-                carousel.style.transform = "translate(-1950px, 0px)"
-            }    
-
-        }else if (this.toggle.width === 3){
-
-            if (idb === 0){
-                carousel.style.transform = "translate(0px, 0px)"
-            }else if (idb === 1) {
-                carousel.style.transform = "translate(-330px, 0px)"
-            }else if (idb === 2) {
-                carousel.style.transform = "translate(-662px, 0px)"
-            }else if (idb === 3) {
-                carousel.style.transform = "translate(-994px, 0px)"
+                if(eliment("b3")===false){
+                    this.act("b3")
+                    this.scrollTo("scrn4")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }  
             }else if (idb === 4) {
-                carousel.style.transform = "translate(-1326px, 0px)"
+                if(eliment("b4")===false){
+                    this.act("b4")
+                    this.scrollTo("scrn5")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }
             }else if (idb === 5) {
-                carousel.style.transform = "translate(-1658px, 0px)"
+                if(eliment("b5")===false){
+                    this.act("b5")
+                    this.scrollTo("scrn6")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }
             }else if (idb === 6) {
-                carousel.style.transform = "translate(-1990px, 0px)"
+                if(eliment("b6")===false){
+                    this.act("b6")
+                    this.scrollTo("scrn7")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b7")===true){
+                        this.off("b7")
+                    }
+                }
             }else if (idb === 7) {
-                carousel.style.transform = "translate(-2322px, 0px)"
+                if(eliment("b7")===false){
+                    this.act("b7")
+                    this.scrollTo("scrn8")
+                    if(eliment("b0")===true){
+                        this.off("b0")
+                    }else if(eliment("b1")===true){
+                        this.off("b1")
+                    }else if(eliment("b2")===true){
+                        this.off("b2")
+                    }else if(eliment("b3")===true){
+                        this.off("b3")
+                    }else if(eliment("b4")===true){
+                        this.off("b4")
+                    }else if(eliment("b5")===true){
+                        this.off("b5")
+                    }else if(eliment("b6")===true){
+                        this.off("b6")
+                    }
+                }
             }
 
         }
@@ -171,7 +409,7 @@ class ScreenShots extends React.Component {
                     <div className="carousel__cont" style={{transform: "translate(0px , 0px)"}}>
                         {this.carousel.scr.map((n)=>{
                             return (
-                                <img className="screenshorts__carousel__img"  src={n.link} alt={n.name} key={n.name}/>
+                                <img className="screenshorts__carousel__img"  id={n.name} src={n.link} alt={n.name} key={n.name}/>
                             )
                         })}
                     </div>
@@ -184,22 +422,22 @@ class ScreenShots extends React.Component {
                     <button className="scroll_button" id="b1" onClick={()=>{
                         this.active(1)
                     }}></button>
-                    <button className="scroll_button" id="b2"  onClick={()=>{
+                    <button className={`scroll_button ${this.bottum.b_3 ? 'on':'off'}`} id="b2"  onClick={()=>{
                         this.active(2)
                     }}></button>
-                    <button className="scroll_button"  id="b3" onClick={()=>{
+                    <button className={`scroll_button ${this.bottum.b_4 ? 'on':'off'}`} id="b3" onClick={()=>{
                         this.active(3)
                     }}></button>
-                    <button className="scroll_button"  id="b4" onClick={()=>{
+                    <button className={`scroll_button ${this.bottum.b_8 ? 'on':'off'}`}  id="b4" onClick={()=>{
                         this.active(4)
                     }}></button>
-                    <button className="scroll_button"  id="b5" onClick={()=>{
+                    <button className={`scroll_button ${this.bottum.b_8 ? 'on':'off'}`}  id="b5" onClick={()=>{
                         this.active(5)
                     }}></button>
-                    <button className="scroll_button"  id="b6" onClick={()=>{
+                    <button className={`scroll_button ${this.bottum.b_8 ? 'on':'off'}`} id="b6" onClick={()=>{
                         this.active(6)
                     }}></button>
-                    <button className="scroll_button"  id="b7" onClick={()=>{
+                    <button className={`scroll_button ${this.bottum.b_8 ? 'on':'off'}`}  id="b7" onClick={()=>{
                         this.active(7)
                     }}></button>
                     
