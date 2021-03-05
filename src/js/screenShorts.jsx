@@ -93,8 +93,8 @@ class ScreenShots extends React.Component {
             this.size()
 
             window.addEventListener("resize",()=>{
-                this.setState(()=>{
-                    return this.state.width = window.innerWidth
+                this.setState((state)=>{
+                    return state.width = window.innerWidth
                 })
                         
                 this.size()

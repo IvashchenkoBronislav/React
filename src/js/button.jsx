@@ -51,11 +51,6 @@
         }   
     };
 
-
-
-
-
-
     class Minu extends React.Component{
         
         render(){
@@ -69,18 +64,11 @@
         }
     };
 
-
-
-
-
     class ButtonToggle extends React.Component {
         constructor(props){
             super(props);
             this.state={togg:false};
         }
-
-
-        
         
         render(){
             return(
@@ -101,14 +89,18 @@
                         minMid1.classList = "mid"
                         navBlack.style.height = "0px"
                         navBlack.style.top = "-380px"
-                    return this.state.togg = false
+                        this.setState((state)=>{
+                            return state.togg = false
+                        })
                     }else{
                         minTop.classList = "top_1"
                         minBot.classList = "bot_1"
                         minMid.classList = "mid_1"
                         navBlack.style.height = "300px"
                         navBlack.style.top = "0px"           
-                        return this.state.togg = true
+                        this.setState((state)=>{
+                            return state.togg = true
+                        })
                     }
                 }} >
                     {<Minu></Minu>}
@@ -117,8 +109,4 @@
         }
     };
 
-
-
-
-
-    export {AppButton , ButtonNav, ButtonToggle};
+export {AppButton , ButtonNav, ButtonToggle};

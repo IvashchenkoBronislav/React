@@ -35,7 +35,9 @@ class Faq extends React.Component{
 
     
     change=(i)=>{
-        this.setState(()=>{return this.state.question[i].togg = !this.state.question[i].togg})
+        this.setState((state)=>{
+            return state.question[i].togg = !this.state.question[i].togg
+        })
         console.log(this.state.question[i].togg)
     }
 
