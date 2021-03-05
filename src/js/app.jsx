@@ -17,7 +17,7 @@ class OnLoad extends React.Component{
                 <Header/>
                 <PartnersCont/>
                 <AboutApp/>
-                <HowToUse/>
+                {/* <HowToUse/> */}
                 <Faq/>
                 <ScreenShots/>
                 <DownloadApp/>
